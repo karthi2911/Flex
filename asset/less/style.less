@@ -1,0 +1,135 @@
+* {
+	box-sizing: border-box;
+}
+
+html, 
+body {
+	height: 100%;
+}
+
+@import "variables.less";
+
+body {
+	background-color: #f5f7fc;
+	font-family: 'Asap', sans-serif;
+	font-size: 13px;
+	color: @secondary-color;
+	line-height: 1.4;
+	@media @xsmall {
+		font-size: 15px;
+	}
+	@media @small {
+		font-size: 20px;
+	}
+	@media @medium {
+		font-size: 24px;
+	}
+	@media @large {
+		font-size: 27px;
+	}
+}
+
+.wrapper {
+	height: 100%;
+}
+.container {
+	max-width: 768px;
+	width: 100%;
+	margin: 0 auto;
+	min-height: 100%;
+	background-color: #fff;
+	@media @orientation {
+		min-height: 640px;
+	}
+}
+.flex-container {
+	display: flex;
+	flex-direction: column;
+	header {
+		background-color: #055379;
+		padding: 10px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.homeIcon, 
+		.homeText, 
+		.settingsIcon {
+			img {
+				max-width: 50%;
+				@media @medium {
+					max-width: 80%;
+				}
+				@media @large {
+					max-width: 100%;
+				}
+			}
+		}
+		.homeText a {
+			color: #fff;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+		.settingsIcon {
+			text-align: right;
+		}
+		a {
+			display: inline-block;
+		}
+	}
+	section {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 20px 30px;
+		@media @xsmall {
+			padding: 38px 30px;
+		}
+		@media @small {
+			padding: 40px 30px;
+		}
+		@media @large {
+			padding: 50px 65px;
+		}
+		.actionItems, 
+		.news, 
+		.donate {
+			background-color: #055379;
+			text-align: center;
+			flex-basis: 100%;
+			position: relative;
+			padding: 10px 0;
+			img {
+				width: auto;
+				height: 14vh;
+			}
+			h4 {
+				margin: 0;
+				color: #fff;
+			}
+		}
+		.ribbon {
+			position: absolute;
+			right: 0;
+			top: -1px;
+			@media @medium {
+				right: 14px;
+			}
+			img {
+				height: auto;
+				width: 50%;
+				@media @medium {
+					width: 100%;
+				}
+			}
+		}
+	}
+	footer {
+		p {
+			text-align: center;
+			color: #055379;
+			margin-top: 0;
+			margin-bottom: 15px;
+		}
+	}
+}
