@@ -13,7 +13,7 @@ body {
 	background-color: #f5f7fc;
 	font-family: 'Asap', sans-serif;
 	font-size: 13px;
-	color: @secondary-color;
+	color: #fff;
 	line-height: 1.4;
 	@media @xsmall {
 		font-size: 15px;
@@ -39,7 +39,7 @@ body {
 	min-height: 100%;
 	background-color: #fff;
 	@media @orientation {
-		min-height: 640px;
+		/*min-height: 640px;*/
 	}
 }
 .flex-container {
@@ -49,7 +49,7 @@ body {
 		background-color: #055379;
 		padding: 10px;
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
 		.homeIcon, 
 		.homeText, 
@@ -57,31 +57,35 @@ body {
 			img {
 				max-width: 50%;
 				@media @medium {
-					max-width: 80%;
+					max-width: 65%;
 				}
 				@media @large {
-					max-width: 100%;
+					max-width: 70%;
 				}
 			}
 		}
-		.homeText a {
-			color: #fff;
-			text-decoration: none;
-			text-transform: uppercase;
+		a {
+			&.homeText{
+				color: #fff;
+				text-decoration: none;
+			}
 		}
 		.settingsIcon {
 			text-align: right;
 		}
 		a {
-			display: inline-block;
+			display: block;
 		}
 	}
 	section {
 		flex-grow: 1;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: space-around;
 		padding: 20px 30px;
+		@media @orientation {
+			flex-direction: row;
+		}
 		@media @xsmall {
 			padding: 38px 30px;
 		}
@@ -102,30 +106,52 @@ body {
 			flex-basis: 100%;
 			position: relative;
 			padding: 10px 0;
+			margin: 7px 0;
+			@media @orientation {
+				width: 30%;
+				margin: 0 15px;
+				padding: 35px 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
 			img {
 				width: auto;
 				height: 14vh;
 				@media @height {
-					height: 10vh;
+					height: 12vh;
+				}
+				@media @orientation {
+					height: 25vh;
 				}
 			}
 			h4 {
 				margin: 0;
 				color: #fff;
+				@media @medium {
+					margin-top: 10px;
+				}
 			}
 		}
 		.ribbon {
 			position: absolute;
-			right: 0;
+			right: -7px;
 			top: -1px;
 			@media @medium {
-				right: 14px;
+				right: -2px;
+			}
+			@media @large {
+				right: 4px;
 			}
 			img {
 				height: auto;
 				width: 50%;
 				@media @medium {
-					width: 100%;
+					width: 60%;
+				}
+				@media @large {
+					width: 80%;
 				}
 			}
 		}
